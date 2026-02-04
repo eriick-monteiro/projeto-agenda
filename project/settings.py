@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=@s+%5(8+92vo@z6-^f48k-79w-j!($vifb7&)g#63enriqzf0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -129,3 +129,10 @@ STATIC_ROOT = BASE_DIR / 'static' # Collect Static
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from project.local_settings import *
+except ImportError:
+    ...
