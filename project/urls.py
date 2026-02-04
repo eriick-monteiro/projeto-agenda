@@ -18,8 +18,23 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse('''
+        <h1 style="text-align:center;" >Home</h1>
+        <hr>
+        <header>
+            <ul style="display: flex; justify-content: center; list-style: none; padding: 0; margin: 0; gap: 20px;">
+                <li><a style="text-decoration:none; color:black;" href="admin/">admin</a></li>
+                <li><a style="text-decoration:none; color:black;" href="admin/contact/contact/">contacts</a></li>
+                <li><a style="text-decoration:none; color:black;" href="admin/contact/category/">categories</a></li>
+            </ul>
+        </header>
+    ''')
 
 urlpatterns = [
+    path('', home),
     path('admin/', admin.site.urls),
     path('contact/', include('contact.urls')),
 ]
