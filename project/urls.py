@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.http import HttpResponse
 
+
 def home(request):
     return HttpResponse('''
         <h1 style="text-align:center;" >Home</h1>
@@ -32,6 +33,7 @@ def home(request):
             </ul>
         </header>
     ''')
+
 
 urlpatterns = [
     path('', home),
