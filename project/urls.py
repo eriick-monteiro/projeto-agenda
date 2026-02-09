@@ -36,9 +36,8 @@ def home(request):
 
 
 urlpatterns = [
-    path('', home),
+    path('', include('contact.urls')),
     path('admin/', admin.site.urls),
-    path('contact/', include('contact.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
