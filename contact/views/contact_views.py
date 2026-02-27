@@ -8,7 +8,7 @@ def index(request):
         .filter(show=True) \
         .order_by('-id')[0:10] \
 
-    print(contacts.query)
+    # print(contacts.query)
 
     context = {
         'contacts': contacts,
